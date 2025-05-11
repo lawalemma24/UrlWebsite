@@ -4,5 +4,15 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(),  tailwindcss()],
+  plugins: [react()],
+  css: {
+    postcss: {
+      plugins: [tailwindcss()] // Add this configuration
+    }
+  },
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
+  },
+  base: './'
 })
