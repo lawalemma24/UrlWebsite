@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';
@@ -35,7 +36,7 @@ const Home = () => {
   };
 
   return (
-    <div className='flex flex-col items-center justify-center  bg-gray-700 text-white rounded-lg shadow-lg p-5 max-w-md w-full bg-opacity-50 backdrop-filter backdrop-blur-xl '>
+    <div >
       <h2 className=' bg-gradient-to-r p-2 from-green-500 to-emerald-600 text-white rounded-lg'>URL Shortener</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
@@ -68,16 +69,16 @@ const Home = () => {
               readOnly
             />
             <button
-              className="btn btn-secondary ms-2 motion.button mt-5 w-full py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white
+              className="btn btn-secondary ms-2 mt-5 w-full py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white
         font-bold rounded-lg shadow-lg hover:from-green-600 hover:to-emerald-700
         focus:ring-offset-gray-900 transition "
-           type = "submit"
+           type="submit"
               onClick={() => navigator.clipboard.writeText(shortUrl)}
             >
               Copy
             </button>
             <button
-              className="btn btn-info ms-2 btn btn-secondary ms-2 motion.button mt-5 w-full py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white
+              className="btn btn-info btn btn-secondary motion.button mt-5 w-full py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white
         font-bold rounded-lg shadow-lg hover:from-green-600 hover:to-emerald-700
         focus:ring-offset-gray-900 transition "
            type = "submit"
