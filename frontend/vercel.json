@@ -12,10 +12,15 @@
     ],
     "routes": [
       {
-        "src": "/assets/(.*)",
+        "src": "/api/(.*)",
+        "dest": "http://localhost:3000/api/$1",
         "headers": {
-          "Cache-Control": "public, max-age=31536000, immutable"
+          "Cache-Control": "s-maxage=0, stale-while-revalidate"
         }
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/index.html"
       },
       {
         "src": "/(.*)",
