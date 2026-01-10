@@ -83,7 +83,7 @@ const UrlList = () => {
             <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center">
               <LinkIcon className="w-8 h-8 text-gray-400" />
             </div>
-            <p className="text-gray-600">No URLs found</p>
+            <p className="text-gray-600">No URL found</p>
             {searchTerm && (
               <button
                 onClick={() => setSearchTerm('')}
