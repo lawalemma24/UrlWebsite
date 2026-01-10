@@ -32,7 +32,7 @@ const Home = () => {
 
   const fetchRecentUrls = async () => {
     try {
-      const response = await axios.get('/list');
+      const response = await axios.get(`${BASE_URL}/api/list`);
       // Take only the 5 most recent URLs
       const recent = response.data.slice(0, 5).map(url => ({
         ...url,

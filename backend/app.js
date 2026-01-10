@@ -11,12 +11,20 @@ connectDB();
 
 app.use(express.json());
 app.use(cors({
-    origin: '*',
+    origin: 'https://url-website-p59k.vercel.app',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    headers: ['Content-Type', 'application/json'],
+    // headers: ['Content-Type', 'application/json'],
     credentials: true,
 }));
 
+
+app.options('*', (req, res) => {
+    res.header('Access-Control-Allow-Origin', 'https://url-website-p59k.vercel.app');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.sendStatus(200);
+});
 
 // Routes
 app.use('/api', urlRoutes);
