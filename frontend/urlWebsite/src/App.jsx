@@ -1,30 +1,39 @@
-import React from 'react'
-import {  Routes , Route } from 'react-router-dom'
-import Navbar from './components/Navbar.jsx'
-import Home from './components/Home.jsx'
-import UrlList from './components/UrlList.jsx'
-import Stats from './components/Stats.jsx'
-import './App.css'
+// App.jsx - Super Simple & Guaranteed to Work
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Stats from './components/Stats';
+import UrlList from './components/UrlList';
+import './App.css';
 
-const App = () => {
+function App() {
   return (
-   
-<div className="App">
-        <Navbar />
-        <div className='min-w-screen min-h-screen bg-gradient-to-br 
-    from-gray-900 via-green-900 to-emerald-900 flex items-center justify-center relative  '>
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <Navbar />
+      
+      <div className="pt-16"> {/* Fixed padding for navbar */}
+        <div className="px-4 py-8">
           <Routes>
-            <Route path="/" element={<Home/>} />
+            <Route path="/" element={<Home />} />
             <Route path="/stats/:urlPath" element={<Stats />} />
             <Route path="/list" element={<UrlList />} />
           </Routes>
         </div>
       </div>
 
-
-    
-
-  )
+      {/* Simple Footer */}
+      <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-12">
+        <div className="max-w-7xl mx-auto px-4 py-6">
+          {/* <div className="text-center"> */}
+            {/* <p className="text-gray-600 dark:text-gray-400 text-sm">
+              © {new Date().getFullYear()} URLShort. All rights reserved.
+            </p> */}
+          {/* </div> */}
+        </div>
+      </footer>
+    </div>
+  );
 }
 
-export default App
+export default App;

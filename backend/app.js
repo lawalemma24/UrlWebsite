@@ -6,12 +6,17 @@ const urlRoutes = require('../backend/routes/urlRoutes.js');
 
 const app = express();
 
-// Connect to MongoDB
+
 connectDB();
 
-// Middleware
-app.use(cors());
 app.use(express.json());
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    // headers: ['Content-Type': 'application/json'],
+    credentials: true,
+}));
+
 
 // Routes
 app.use('/api', urlRoutes);

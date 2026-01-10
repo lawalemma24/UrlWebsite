@@ -10,7 +10,7 @@ router.post('/encode', urlController.encodeUrl);
 router.get('/decode', urlController.decodeUrl);
 
 // Get URL statistics
-router.get('/statistic/:urlPath', statController.getUrlStats);
+router.get('/statistic/:urlPath', statController.getStats);
 
 // List all URLs
 router.get('/list', urlController.listUrls);

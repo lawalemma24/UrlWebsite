@@ -4,7 +4,6 @@ const shortid = require('shortid');
 
 // Generate a short URL
 
-
 exports.encodeUrl = async (req, res) => {
   try {
     const { originalUrl } = req.body;

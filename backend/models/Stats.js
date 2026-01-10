@@ -8,10 +8,14 @@ const statSchema = new mongoose.Schema({
   ipAddress: String,
   userAgent: String,
   referrer: String,
-  accessedAt: {
+  timestamp: {
     type: Date,
     default: Date.now,
   },
-});
+  
+},
+{ timestamps: true });
+
+
 
 module.exports = mongoose.model('Stat', statSchema);

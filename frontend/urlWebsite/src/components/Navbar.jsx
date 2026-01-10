@@ -1,19 +1,42 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+// src/components/Navbar.jsx (Simplest)
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
-const Navbar = () =>
-   {
+const Navbar = () => {
+  const location = useLocation();
+
   return (
-    <div className=' bg-green-400 items-center justify-center w-full flex flex-col'>
-      <h1 className='items-center justify-center flex p-10 capitalize font-bold font-serif rounded-2xl text-4xl text-white '>url Shortening Website</h1>
-      <ul className='flex justify-center items-center gap-10 p-5 text-2xl font-serif font-bold text-white'>
-        <Link to ='/'>Home</Link>
-        <Link to ='/list'>List</Link >
-      </ul>
+    <nav className="sticky top-0 z-50 w-full bg-white shadow">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex items-center justify-between h-14">
+          
+          <Link to="/" className="text-xl font-bold text-blue-600">
+            Shortify
+          </Link>
+          
+          <div className="flex items-center space-x-6">
+            <Link
+              to="/"
+              className={`font-medium ${
+                location.pathname === '/' ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
+              }`}
+            >
+              Home
+            </Link>
+            
+            <Link
+              to="/list"
+              className={`font-medium ${
+                location.pathname === '/list' ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
+              }`}
+            >
+              Analytics
+            </Link>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
 
-
-    </div>
-  )
-}
-
-export default Navbar
+export default Navbar;
