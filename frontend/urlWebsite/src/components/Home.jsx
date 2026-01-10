@@ -23,7 +23,7 @@ const Home = () => {
     totalClicks: 0,
     todayClicks: 0
   });
-  const BASE_URL = ""
+  const BASE_URL = "https://url-website-server.vercel.app/"
   // Fetch recent URLs and stats on component mount
   useEffect(() => {
     fetchRecentUrls();
