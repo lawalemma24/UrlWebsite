@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors({
     origin: 'https://url-website-p59k.vercel.app/',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    // headers: ['Content-Type': 'application/json'],
+    headers: ['Content-Type', 'application/json'],
     credentials: true,
 }));
 
