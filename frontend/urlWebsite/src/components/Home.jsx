@@ -36,7 +36,7 @@ const Home = () => {
       // Take only the 5 most recent URLs
       const recent = response.data.slice(0, 5).map(url => ({
         ...url,
-        shortUrl: `${BASE_URL}/api/${url.urlPath}`
+       shortUrl: `${BASE_URL}${url.urlPath ? `/api/${url.urlPath}` : ''}`
       }));
       setRecentUrls(recent);
     } catch (err) {
