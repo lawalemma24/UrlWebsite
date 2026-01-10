@@ -18,7 +18,7 @@ const Stats = () => {
   const [copied, setCopied] = useState(false);
   const [urlInfo, setUrlInfo] = useState(null);
 
-  const BASE_URL = "https://url-website-server.vercel.app/"
+  const BASE_URL = "https://url-website-server.vercel.app"
 
   useEffect(() => {
     const fetchData = async () => {
