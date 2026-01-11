@@ -89,10 +89,10 @@ exports.decodeUrl = async (req, res) => {
 // Redirect to original URL
 exports.redirectUrl = async (req, res) => {
   try {
-    const { urlPath } = req.params;
+    const { shortCode } = req.params;
     
     const url = await Url.findOneAndUpdate(
-      { urlPath },
+      { shortCode },
       { $inc: { clicks: 1 } },
       { new: true }
     );

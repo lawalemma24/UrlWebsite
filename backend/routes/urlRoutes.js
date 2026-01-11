@@ -3,19 +3,18 @@ const router = express.Router();
 const urlController = require('../controllers/urlController');
 const statController = require('../controllers/statController');
 
-// Encode a URL
+
 router.post('/encode', urlController.encodeUrl);
 
-// Decode a URL
+
 router.get('/decode', urlController.decodeUrl);
 
-// Get URL statistics
+
 router.get('/statistic/:urlPath', statController.getStats);
 
-// List all URLs
 router.get('/list', urlController.listUrls);
 
-// Redirect short URL
-router.get('/:urlPath', urlController.redirectUrl);
+
+router.get('/:shortCode', urlController.redirectUrl);
 
 module.exports = router;
