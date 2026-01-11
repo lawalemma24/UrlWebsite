@@ -21,7 +21,7 @@ const UrlList = () => {
   const [error, setError] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
 
-  const BASE_URL = " ";
+  const BASE_URL = "https://url-website-server.vercel.app";
 
   useEffect(() => {
     fetchUrls();
